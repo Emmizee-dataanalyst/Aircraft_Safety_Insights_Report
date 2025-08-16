@@ -95,19 +95,19 @@ st.write("### AirCrashes Analysis Overview")
 col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
 
 with col1:
-    st.metric("Total People Aboard: ", f"{Total_People_aboard:,.2f}")
+    st.metric("Total People Aboard: ", f"{Total_People_aboard:,.0f}")
 with col2:
-    st.metric("Total Air Fatalities: ", f"{Total_Air_Fatalities:,.2f}")
+    st.metric("Total Air Fatalities: ", f"{Total_Air_Fatalities:,.0f}")
 with col3:
-    st.metric("Total Ground Cases: ", f"{Total_Ground_Cases:,.2f}")
+    st.metric("Total Ground Cases: ", f"{Total_Ground_Cases:,.0f}")
 with col4:
     st.metric("Countries: ", Countries)
 with col5:
     st.metric("Aircraft Manufacturers", Aircraft_Manufacturers)
 with col6:
-    st.metric("Total Survivors: ", f"{Total_survivors:,.2f}")
+    st.metric("Total Survivors: ", f"{Total_survivors:,.0f}")
 with col7:
-    st.metric("Total Deaths: ", f"{Total_deaths:,.2f}")
+    st.metric("Total Deaths: ", f"{Total_deaths:,.0f}")
 
 st.write("### Insights and Analysis Findings")
 
