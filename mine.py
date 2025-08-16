@@ -85,7 +85,7 @@ st.markdown("<h1 style='color:#1f77b4; text-align:center;'>✈ Aircraft Safety I
 st.markdown("""
 <div class='section'>
 <h2>📌 Introduction</h2>
-Welcome to the <strong>Aircraft Safety and Risk Analysis Dashboard</strong>. This report provides key insights into aviation safety trends, operational risks, and manufacturer performance over time. Our goal is to help HR and safety teams make informed decisions regarding <em>crew deployment, training, and risk management strategies</em>.
+Welcome to the <strong>Aircraft Safety and Risk Analysis Dashboard</strong>. This report provides key insights into aviation safety trends, operational risks, and manufacturer performance over time. My goal is to help HR and safety teams make informed decisions regarding <em>crew deployment, training, and risk management strategies</em>.
 </div>
 """, unsafe_allow_html=True)
 
@@ -115,7 +115,7 @@ st.write("### Insights and Analysis Findings")
 st.markdown("""
 <div class='section'>
 <h2>1️⃣ Understanding Seasonal Risk Patterns</h2>
-We begin by examining <strong>which quarter of the year experiences the highest number of aircraft incidents</strong>. Seasonal trends help us anticipate peak-risk periods and allocate safety resources effectively.
+I began by examining <strong>which quarter of the year experiences the highest number of aircraft incidents</strong>. Seasonal trends help us anticipate peak-risk periods and allocate safety resources effectively.
 </div>
 """, unsafe_allow_html=True)
 
@@ -142,7 +142,7 @@ st.altair_chart(chart1, use_container_width=True)
 st.markdown("""
 <div class='section'>
 <h2>2️⃣ Identifying High-Risk Regions</h2>
-Next, we explore <strong>the top 10 countries with the highest passenger fatalities</strong> and <strong>continents with the most ground fatalities</strong>. These insights guide HR in assessing regional safety concerns, managing crew assignments, and designing location-specific safety programs.
+Next, I explored <strong>the top 10 countries with the highest passenger fatalities</strong> and <strong>continents with the most ground fatalities</strong>. These insights guide HR in assessing regional safety concerns, managing crew assignments, and designing location-specific safety programs.
 </div>
 """, unsafe_allow_html=True)
 
@@ -211,7 +211,7 @@ st.altair_chart(chart, use_container_width=True)
 st.markdown("""
 <div class='section'>
 <h2>3️⃣ Historical Safety Improvements</h2>
-We analyze <strong>how survival rates versus death rates have changed across decades</strong>, alongside <strong>the trend of average fatalities per year</strong>. This historical perspective shows whether safety measures have improved industry outcomes over time.
+I analyzed <strong>how survival rates versus death rates have changed across decades</strong>, alongside <strong>the trend of average fatalities per year</strong>. This historical perspective shows whether safety measures have improved industry outcomes over time.
 </div>
 """, unsafe_allow_html=True)
 
@@ -272,7 +272,7 @@ st.altair_chart(chart, use_container_width=True)
 st.markdown("""
 <div class='section'>
 <h2>4️⃣ Multi-Dimensional Impact Across Decades</h2>
-We compare <strong>ground fatalities, in-air fatalities, and people aboard across decades</strong>. This gives us a holistic view of how different aspects of crash severity have evolved, informing HR on whether current operational practices are reducing overall impact.
+I compared <strong>ground fatalities, in-air fatalities, and people aboard across decades</strong>. This gives us a holistic view of how different aspects of crash severity have evolved, informing HR on whether current operational practices are reducing overall impact.
 </div>
 """, unsafe_allow_html=True)
 
@@ -307,7 +307,7 @@ st.altair_chart(line_chart, use_container_width=True)
 st.markdown("""
 <div class='section'>
 <h2>5️⃣ Operational Risk by Aircraft Category</h2>
-Not all flights are equal. We investigate <strong>which aircraft categories—commercial, cargo, or private—record the highest fatalities</strong>, enabling HR to identify which operational types require enhanced training and emergency preparedness.
+Not all flights are equal. I investigated <strong>which aircraft categories—commercial, cargo, or private—record the highest fatalities</strong>, enabling HR to identify which operational types require enhanced training and emergency preparedness.
 </div>
 """, unsafe_allow_html=True)
 
@@ -341,7 +341,7 @@ st.altair_chart(chart, use_container_width=True)
 st.markdown("""
 <div class='section'>
 <h2>6️⃣ Manufacturer-Level Risk Analysis</h2>
-We reveal <strong>which aircraft manufacturers have the highest total fatalities and how their survival and death rates compare</strong>, followed by <strong>which manufacturers tend to have the most severe crashes on average</strong>.
+I revealed <strong>which aircraft manufacturers have the highest total fatalities and how their survival and death rates compare</strong>, followed by <strong>which manufacturers tend to have the most severe crashes on average</strong>.
 </div>
 """, unsafe_allow_html=True)
 
@@ -404,7 +404,7 @@ st.altair_chart(chart, use_container_width=True)
 st.markdown("""
 <div class='section'>
 <h2>7️⃣ Improvement Over Time</h2>
-Finally, we highlight <strong>which manufacturers have shown the most improvement in survival rates over time</strong>, showcasing progress in aviation safety and potential preferred partners for future operations.
+Finally, I highlighted <strong>which manufacturers have shown the most improvement in survival rates over time</strong>, showcasing progress in aviation safety and potential preferred partners for future operations.
 </div>
 """, unsafe_allow_html=True)
 
@@ -453,14 +453,221 @@ chart = alt.Chart(top_improvers).mark_bar().encode(
 
 st.altair_chart(chart, use_container_width=True)
 
-# Closing Statement
+from datetime import datetime
+
+# =========================
+# STYLES (clean + animated)
+# =========================
 st.markdown("""
-<div class='section'>
-<h2>✅ Closing Statement</h2>
-This dashboard equips HR and safety teams with data-driven insights for better <em>crew safety planning</em>, <em>training strategies</em>, and <em>manufacturer risk assessment</em>. By understanding trends and acting proactively, we can minimize risks and improve outcomes across the aviation ecosystem.
-</div>
+<style>
+:root{
+  --brand:#1f77b4; --ink:#1f2937; --muted:#6b7280; --bg:#f8fafc; --card:#ffffff; --ok:#16a34a; --warn:#e11d48;
+}
+.section-title {
+  font-size: 1.4rem; font-weight: 700; color: var(--brand); margin: 0.2rem 0 0.6rem 0;
+}
+.subtle { color: var(--muted); font-size: 0.95rem; }
+.card {
+  background: var(--card); border-radius: 14px; padding: 18px 18px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06); border:1px solid #eef2f7;
+  animation: fadeInUp 600ms ease; margin-bottom: 14px;
+}
+.card h4 { margin: 0 0 0.5rem 0; color: var(--ink); }
+.card ul { margin: 0.2rem 0 0 1.1rem; }
+.badge { display:inline-block; padding: 2px 8px; border-radius: 999px; background: #eef6ff; color: var(--brand); font-size: 0.8rem; font-weight:600; }
+.kicker { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.6rem; font-style: italic; }
+.hr { height:1px; background:#eef2f7; border:0; margin: 10px 0 16px 0; }
+@keyframes fadeInUp { from {opacity:0; transform: translateY(8px);} to {opacity:1; transform: translateY(0);} }
+</style>
 """, unsafe_allow_html=True)
 
+# =========================
+# HEADER
+# =========================
+st.markdown("## 📌 Executive Takeaways")
+st.markdown(
+    f"<div class='subtle'>Concise findings, likely causes, and actionable recommendations for HR & Safety leadership. "
+    f"Last updated: <strong>{datetime.now().strftime('%Y-%m-%d %H:%M')}</strong></div>",
+    unsafe_allow_html=True
+)
+st.markdown("<div class='hr'></div>", unsafe_allow_html=True)
+
+# =========================
+# FINDINGS + CAUSES
+# =========================
+st.markdown("<div class='section-title'>Findings & Potential Causes</div>", unsafe_allow_html=True)
+left, right = st.columns(2)
+
+with left:
+    st.markdown("""
+    <div class="card">
+      <span class="badge">High-Risk Countries</span>
+      <div class="kicker">Where fatalities concentrate</div>
+      <ul>
+        <li><strong>United States, Russia, Brazil, Colombia, France, India, Indonesia, China, UK, Spain</strong> show the highest passenger fatalities.</li>
+      </ul>
+      <div class="kicker">Likely drivers</div>
+      <ul>
+        <li>High traffic density, complex weather, varied infrastructure quality, and challenging terrain/routes.</li>
+      </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="card">
+      <span class="badge">Ground Fatalities Spike (2000s)</span>
+      <div class="kicker">Elevated non-airborne impact</div>
+      <ul>
+        <li>Unusual increase in ground casualties during the 2000s.</li>
+      </ul>
+      <div class="kicker">Likely drivers</div>
+      <ul>
+        <li>Runway incursions, on-ground collisions, fueling/handling incidents, perimeter security gaps.</li>
+      </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+with right:
+    st.markdown("""
+    <div class="card">
+      <span class="badge">Trend Over Decades</span>
+      <div class="kicker">Overall safety improving with a temporary spike</div>
+      <ul>
+        <li>Death rates declined from the late 1960s to early 2000s, spiked in the 2010s, then improved markedly in the 2020s.</li>
+      </ul>
+      <div class="kicker">Likely drivers</div>
+      <ul>
+        <li>Regulatory upgrades, avionics/airframe advances, variable compliance in high-growth markets, exposure effects.</li>
+      </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="card">
+      <span class="badge">Risk by Category & Manufacturer</span>
+      <div class="kicker">Where operational exposure is highest</div>
+      <ul>
+        <li><strong>Commercial jets, military, regional, helicopters, general aviation</strong> have the highest fatalities.</li>
+        <li>Higher crash severity (historically) among <strong>Airbus, McDonnell, Mil Moscow, Tupolev, Boeing, Bombardier, Sikorsky, Bristol, Sud Aviation</strong>.</li>
+        <li>Notable survival improvements over time in <strong>Mikoyan-Gurevich, Transall, Aeronautical Macchi, Consolidated Aircraft, Tupolev</strong>.</li>
+      </ul>
+      <div class="kicker">Likely drivers</div>
+      <ul>
+        <li>Operational complexity, mission profiles, legacy fleets, safety retrofits and training quality.</li>
+      </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("<div class='hr'></div>", unsafe_allow_html=True)
+
+# =========================
+# RECOMMENDATIONS
+# =========================
+st.markdown("<div class='section-title'>Actionable Recommendations</div>", unsafe_allow_html=True)
+
+rec_cards = [
+    {
+        "title":"Targeted Training & Recurrent Drills",
+        "desc":"Prioritize emergency response, CRM, and terrain/weather procedures for crews operating in high-risk regions and categories (commercial, military, helicopters, regional).",
+        "tone":"ok"
+    },
+    {
+        "title":"Airport & Ground Safety Audits",
+        "desc":"Partner with operators/authorities to audit runway incursion controls, apron procedures, and perimeter security—especially at airports linked to the 2000s ground spike.",
+        "tone":"ok"
+    },
+    {
+        "title":"Risk-Based Crew Assignment",
+        "desc":"Deploy the most experienced flight/maintenance crews on routes, seasons, and aircraft categories with elevated risk; enforce pre-departure risk briefings.",
+        "tone":"ok"
+    },
+    {
+        "title":"Fleet & Partner Due Diligence",
+        "desc":"Use manufacturer trend data (severity & survival improvement) in procurement/lease decisions; favor platforms and partners with clear safety gains.",
+        "tone":"ok"
+    },
+    {
+        "title":"Continuous Monitoring Dashboard",
+        "desc":"Maintain live KPIs by region, category, and manufacturer (survival, fatalities, ground events). Trigger alerts on adverse shifts to accelerate interventions.",
+        "tone":"ok"
+    },
+]
+
+# Render recs as cards
+for r in rec_cards:
+    st.markdown(
+        f"""
+        <div class="card">
+          <h4>✅ {r['title']}</h4>
+          <div class="subtle">{r['desc']}</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+# =========================
+# DOWNLOADS (CSV + Markdown)
+# =========================
+findings_md = """# Executive Takeaways
+
+## Findings & Potential Causes
+- **High-Risk Countries:** United States, Russia, Brazil, Colombia, France, India, Indonesia, China, UK, Spain.  
+  *Likely causes:* traffic density, complex weather, infrastructure variance, terrain/routes.
+- **Trend Over Decades:** Death rates declined (late 1960s–early 2000s), spiked in 2010s, improved in 2020s.  
+  *Likely causes:* regulatory upgrades, avionics, variable compliance, exposure.
+- **Ground Fatalities (2000s):** Unusual spike in on-ground casualties.  
+  *Likely causes:* runway incursions, ground collisions, handling incidents, security gaps.
+- **Risk by Category & Manufacturer:** Highest exposure in commercial, military, regional, helicopters, GA. Historical severity higher among Airbus, McDonnell, Mil Moscow, Tupolev, Boeing, Bombardier, Sikorsky, Bristol, Sud Aviation. Improvements noted for Mikoyan-Gurevich, Transall, Aeronautical Macchi, Consolidated Aircraft, Tupolev.
+
+## Recommendations
+1. Targeted Training & Recurrent Drills.
+2. Airport & Ground Safety Audits.
+3. Risk-Based Crew Assignment.
+4. Fleet & Partner Due Diligence.
+5. Continuous Monitoring Dashboard.
+
+_Last updated: {ts}_
+""".format(ts=datetime.now().strftime("%Y-%m-%d %H:%M"))
+
+# CSV: two-column summary to share quickly
+csv_rows = [
+    ["High-Risk Countries", "US, Russia, Brazil, Colombia, France, India, Indonesia, China, UK, Spain"],
+    ["Trend Over Decades", "Decline (late 1960s–2000s), spike (2010s), improvement (2020s)"],
+    ["Ground Fatalities (2000s)", "Spike; runway/apron/security vulnerabilities"],
+    ["Risk by Category", "Commercial, military, regional, helicopters, GA"],
+    ["Higher Severity (Historical)", "Airbus, McDonnell, Mil Moscow, Tupolev, Boeing, Bombardier, Sikorsky, Bristol, Sud Aviation"],
+    ["Improvement in Survival", "Mikoyan-Gurevich, Transall, Aeronautical Macchi, Consolidated Aircraft, Tupolev"],
+    ["Key Actions",
+     "Training; Ground audits; Risk-based crew; Due diligence; Continuous monitoring"],
+]
+df_takeaway = pd.DataFrame(csv_rows, columns=["Topic", "Summary"])
+
+st.markdown("<div class='hr'></div>", unsafe_allow_html=True)
+dl_col1, dl_col2 = st.columns([1,1])
+with dl_col1:
+    st.download_button(
+        label="📥 Download Executive Takeaways (Markdown)",
+        data=findings_md.encode("utf-8"),
+        file_name="executive_takeaways.md",
+        mime="text/markdown"
+    )
+with dl_col2:
+    st.download_button(
+        label="📊 Download Summary Table (CSV)",
+        data=df_takeaway.to_csv(index=False).encode("utf-8"),
+        file_name="executive_takeaways.csv",
+        mime="text/csv"
+    )
+
+# =========================
+# OPTIONAL: Notes / Assumptions
+# =========================
+with st.expander("Notes & Assumptions"):
+    st.write("""
+- Findings reflect patterns in the provided dataset; results may vary with additional data or reclassification.
+- Manufacturer severity and improvements are historical and context-dependent (fleet age, mission, geography).
+- Recommendations should complement regulator/ICAO/IATA directives and operator SOPs.
+    """)
 
 
 
